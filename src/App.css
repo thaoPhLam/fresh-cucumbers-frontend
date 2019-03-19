@@ -8,6 +8,8 @@
 
 body {
   background-color: lightslategray;
+  background-image: url("popcorn.jpg");
+  background-size: cover;
 }
 
 .App-logo {

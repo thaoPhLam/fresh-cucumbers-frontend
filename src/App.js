@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
-import popcorn from './popcorn.png';
 import './App.css';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -33,9 +31,6 @@ class App extends Component {
           <div className="container">
 
             <Header />
-
-            <img src={logo} className="App-logo" alt="logo" />
-            <img src={popcorn} className="popcorn" alt="popcorn"/>
 
             <Route exact path="/" render={movies => (
               <React.Fragment>
