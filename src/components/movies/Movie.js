@@ -12,9 +12,10 @@ class Movie extends Component {
     };
 
     render() {
+        const {Title} = this.props.movie;
         return (
             <div style={this.getStyle()}>
-                <p>{ this.props.movie.title }</p>
+                <p>{Title}</p>
             </div>
         );
     }

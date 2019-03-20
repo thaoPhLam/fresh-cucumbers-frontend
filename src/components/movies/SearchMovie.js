@@ -14,7 +14,7 @@ class SearchMovie extends Component {
                     placeholder="Search for movies..."
                 />
                 <input
-                    onChange={this.props.handleSearch}
+                    onChange={this.props.handleSearch.bind(this)}
                     type="submit"
                     value="Search"
                     className="btn"
