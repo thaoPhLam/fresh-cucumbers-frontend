@@ -1,4 +1,5 @@
 import React from 'react';
+import background from './popcorn.jpg';
 
 function Header() {
     return (
@@ -9,10 +10,11 @@ function Header() {
 }
 
 const headerStyle = {
-    background: 'red',
+    backgroundImage: `url(${background})`,
+    backgroundSize: 'cover',
     color: '#fff',
-    textAlign: 'center',
-    padding: '10px'
+    textAlign: 'left',
+    padding: '80px'
 };
 
 export default Header;
