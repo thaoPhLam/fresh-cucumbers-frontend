@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 class SearchMovie extends Component {
 
+
     render() {
         return (
             <form action="" style={{ display: 'flex' }}>
@@ -13,6 +14,7 @@ class SearchMovie extends Component {
                     placeholder="Search for movies..."
                 />
                 <input
+                    onChange={this.props.handleSearch}
                     type="submit"
                     value="Search"
                     className="btn"
