@@ -5,24 +5,17 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Movies from './components/movies/Movies';
 import SearchMovie from './components/movies/SearchMovie';
+import axios from 'axios';
 
 class App extends Component {
   state = {
-    movies: [
-      {
-        id: 1,
-        title: 'Ironman'
-      },
-      {
-        id: 2,
-        title: 'Avengers'
-      },
-      {
-        id: 3,
-        title: 'Spiderman'
-      }
-    ]
+    movies: []
   };
+
+  componentDidMount() {
+    axios.get('http://localhost:8888/movie/index')
+        .then(res => this.setState({movies: res.data}));
+  }
 
   render() {
     return (
