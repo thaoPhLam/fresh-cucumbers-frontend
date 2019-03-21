@@ -21,6 +21,7 @@ class App extends Component {
   searchMovie = (movieTitle) => {
 
     axios.get(`http://localhost:8888/movie/search?title=${movieTitle}`)
+          //.then(res => this.setState({movies: res.data}));
     //.then(res => this.setState({movies: res.data}))
     .then(res => console.log(res.data))
     /* */
@@ -50,6 +51,7 @@ class App extends Component {
               <React.Fragment>
                 <SearchMovie  searchMovie={this.searchMovie}/>
                   <Movies movies={this.state.movies} />
+
               </React.Fragment>
             )} />
 

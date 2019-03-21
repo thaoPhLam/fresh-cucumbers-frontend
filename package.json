@@ -10,7 +10,9 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-search-bar": "^2.2.0",
-    "react-search-field": "^1.0.0"
+    "react-search-field": "^1.0.0",
+    "react-sticky": "^6.0.3",
+    "react-with-important-style": "^0.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
