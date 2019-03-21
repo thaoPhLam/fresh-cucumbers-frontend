@@ -20,7 +20,7 @@ class App extends Component {
     // If the search bar isn't empty
     if (e.target.value !== "") {
       // Assign the original list to currentList
-      currentList = this.props.items;
+      currentList = this.props.movies;
 
       // Use .filter() to determine which items should be displayed
       // based on the search terms
@@ -36,7 +36,7 @@ class App extends Component {
       });
     } else {
       // If the search bar is empty, set newList to original task list
-      newList = this.props.items;
+      newList = this.props.movies;
     }
     // Set the filtered state based on what our rules added to newList
     this.setState({
