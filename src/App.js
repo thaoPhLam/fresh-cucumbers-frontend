@@ -18,6 +18,23 @@ class App extends Component {
 
     }
 
+  searchMovie = (movieTitle) => {
+
+    axios.get(`http://localhost:8888/movie/search?title=${movieTitle}`)
+    //.then(res => this.setState({movies: res.data}))
+    .then(res => console.log(res.data))
+    /* */
+    /*
+    fetch(`http://localhost:8888/movie/search?title=${movieTitle}`)
+        .then(resp => function () {
+          console.log(resp);
+        });
+
+    console.log("this is the state");
+    console.log(this.state);
+     */
+  };
+
   render() {
     return (
       <Router>
@@ -26,8 +43,10 @@ class App extends Component {
 
             <Header />
 
-            <Route exact path="/" render={movies => (
-                
+
+            <Route exact path="/" render={() => (
+
+      
               <React.Fragment>
                 <SearchMovie  searchMovie={this.searchMovie}/>
                   <Movies movies={this.state.movies} />
