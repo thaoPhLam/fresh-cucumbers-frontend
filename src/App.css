@@ -16,6 +16,12 @@
   height: 20vmin;
 }
 
+body {
+  font-weight: bold;
+  font-family: Verdana;
+  font-size: 1.5vw;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

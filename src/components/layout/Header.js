@@ -4,7 +4,7 @@ import background from './popcorn.jpg';
 function Header() {
     return (
         <header style={headerStyle}>
-            <h1>Fresh Cucumbers Review Movies</h1>
+            <h1>Fresh Cucumbers Movie Reviews</h1>
         </header>
     )
 }
@@ -12,7 +12,7 @@ function Header() {
 const headerStyle = {
     backgroundImage: `url(${background})`,
     backgroundSize: 'cover',
-    color: '#fff',
+    color: '',
     textAlign: 'left',
     padding: '80px'
 };
