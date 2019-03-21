@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 class SearchMovie extends Component {
+
     state = {
         title: ''
     };
@@ -17,7 +19,9 @@ class SearchMovie extends Component {
     render() {
         return (
             <form onSubmit={this.onSubmit} style={{ display: 'flex' }}>
+
                 <input
+                    value={this.state.data} onChange={event => this.handleOnChange(event)}
                     type="text"
                     name="title"
                     style={{ flex: '10', padding: '10px' }}

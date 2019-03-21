@@ -15,7 +15,8 @@ class App extends Component {
   componentDidMount() {
     axios.get('http://localhost:8888/movie/index')
         .then(res => this.setState({movies: res.data}));
-  }
+
+    }
 
   searchMovie = (movieTitle) => {
 
@@ -42,12 +43,16 @@ class App extends Component {
 
             <Header />
 
+
             <Route exact path="/" render={() => (
+
+      
               <React.Fragment>
-                  <SearchMovie searchMovie={this.searchMovie}/>
+                <SearchMovie  searchMovie={this.searchMovie}/>
                   <Movies movies={this.state.movies} />
               </React.Fragment>
             )} />
+
 
           </div>
         </div>
