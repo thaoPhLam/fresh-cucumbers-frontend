@@ -20,8 +20,8 @@ class App extends Component {
   searchMovie = (movieTitle) => {
 
     axios.get(`http://localhost:8888/movie/search?title=${movieTitle}`)
-    .then(res => this.setState({movies: res.data}))
-    //.then(res => console.log(res.data))
+    //.then(res => this.setState({movies: res.data}))
+    .then(res => console.log(res.data))
     /* */
     /*
     fetch(`http://localhost:8888/movie/search?title=${movieTitle}`)
