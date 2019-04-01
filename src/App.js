@@ -19,21 +19,9 @@ class App extends Component {
     }
 
   searchMovie = (movieTitle) => {
-
-    axios.get(`http://localhost:8888/movie/search?title=${movieTitle}`)
-          //.then(res => this.setState({movies: res.data}));
-    //.then(res => this.setState({movies: res.data}))
-    .then(res => console.log(res.data))
-    /* */
-    /*
-    fetch(`http://localhost:8888/movie/search?title=${movieTitle}`)
-        .then(resp => function () {
-          console.log(resp);
-        });
-
-    console.log("this is the state");
-    console.log(this.state);
-     */
+    axios.get(`http://localhost:8888/movie/search?title=${movieTitle}`, movieTitle)
+    .then(res =>
+        this.setState({ movies: [this.state.movies, res.data] }))
   };
 
   render() {
