@@ -19,10 +19,20 @@ class Movie extends Component {
 
         return (
             <div style={this.getStyle()}>
-                <p>{Title}</p>
-                <img src={Poster} alt=""/>
-                <p>Rating: {imdbRating}</p>
-                <p>{Plot}</p>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <img src={Poster} alt=""/>
+                        </td>
+                        <td>
+                            <p>{Title}</p>
+                            <p>Rating: {imdbRating}</p>
+                            <p>{Plot}</p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         );
     }
