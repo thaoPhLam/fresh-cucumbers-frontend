@@ -13,7 +13,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axios.get('http://localhost:8888/movie/index')
+    axios.get('http://localhost:8888/movie/index') // make http://localhost:8888 a constant!
         .then(res => this.setState({movies: res.data}));
 
     }

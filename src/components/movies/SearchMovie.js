@@ -21,7 +21,8 @@ class SearchMovie extends Component {
             <form  onSubmit={this.onSubmit} style={{display: 'flex' }}>
 
                 <input
-                    value={this.state.data} onChange={event => this.handleOnChange(event)}
+                    value={this.state.data}
+                    onChange={event => this.handleOnChange(event)}
                     type="text"
                     name="title"
                     style={{ flex: '10', padding: '10px' }}
