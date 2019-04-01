@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import withImportantStyle from 'react-with-important-style'
+
 
 class Movie extends Component {
     getStyle = () => {
