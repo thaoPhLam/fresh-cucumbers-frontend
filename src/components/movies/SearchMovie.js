@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import StickyHeader from 'react-sticky-header';
+
 import axios from 'axios';
 
 class SearchMovie extends Component {
@@ -39,6 +41,7 @@ class SearchMovie extends Component {
         );
     }
 }
+
 
 SearchMovie.propTypes = {
     searchMovie: PropTypes.func.isRequired
