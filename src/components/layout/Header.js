@@ -1,12 +1,45 @@
+
 import React from 'react';
-import background from './popcorn.jpg';
+import {Link} from "react-router-dom";
+import 'react-sticky-header/styles.css';
+import StickyHeader from 'react-sticky-header';
+import background from "./popcorn.jpg";
+
+import { Router, Route, Switch } from "react-router";
+import SearchMovie from "../../App";
+
 
 function Header() {
     return (
-        <header style={headerStyle}>
-            <h1>Fresh Cucumbers Movie Reviews</h1>
-        </header>
-    )
+        <StickyHeader
+            header={
+                <div className="Header_root">
+
+                    <h1  className="Header_title" style={{color: 'grey'}} onClick={reaload}>Fresh Cucumbers</h1>
+
+
+                </div>
+            }
+        >
+            <section style={{color: 'white'}}>
+                <p>
+a
+                </p>
+                <p>
+a
+
+                </p>
+                <p>
+a
+
+                </p>
+            </section>
+        </StickyHeader>
+            )
+}
+
+function reaload () {
+    window.location.reload()
 }
 
 const headerStyle = {
@@ -15,6 +48,10 @@ const headerStyle = {
     color: '',
     textAlign: 'left',
     padding: '80px'
+};
+
+const linkStyle = {
+    textDecoration: 'none'
 };
 
 export default Header;

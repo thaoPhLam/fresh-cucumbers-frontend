@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Header from './components/layout/Header';
+import 'react-sticky-header/styles.css';
 import Movies from './components/movies/Movies';
 import SearchMovie from './components/movies/SearchMovie';
+import StickyHeader from 'react-sticky-header';
 import axios from 'axios';
+import background from "./components/layout/popcorn.jpg";
+
 
 class App extends Component {
   state = {
@@ -25,29 +28,58 @@ class App extends Component {
   };
 
   render() {
+    const headerStyle = {
+      backgroundImage: `url(${background})`,
+      backgroundSize: 'cover',
+      color: '',
+      textAlign: 'left',
+      padding: '80px'
+    };
     return (
       <Router>
         <div>
           <div className="container">
-
-            <Header />
-
-
+            <div>
+              <StickyHeader
+                header={
+                  <div style={headerStyle} className="Header_root">
+                    <h1 className="Header_title" style={{color: 'grey'}} onClick={reaload}>Fresh Cucumbers</h1>
+                    <SearchMovie  searchMovie={this.searchMovie}/>
+                  </div>
+                }
+            >
+                <section style={{color: 'white'}}>
+                  <p>
+                    a
+                  </p>
+                  <p>
+                    a
+                  </p>
+                  <p>
+                    a
+                  </p><p>
+                    a
+                  </p><p>
+                    a
+                  </p><p>
+                    a
+                  </p>
+                </section>
+            </StickyHeader>
+          </div>
             <Route exact path="/" render={() => (
-
-      
               <React.Fragment>
-                <SearchMovie  searchMovie={this.searchMovie}/>
-                  <Movies movies={this.state.movies} />
-
+                <Movies movies={this.state.movies} />
               </React.Fragment>
             )} />
-
-
           </div>
         </div>
       </Router>
     );
+
+    function reaload () {
+      window.location.reload()
+    }
   }
 }
 
