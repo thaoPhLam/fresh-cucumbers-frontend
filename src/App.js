@@ -24,7 +24,7 @@ class App extends Component {
   searchMovie = (movieTitle) => {
     axios.get(`http://localhost:8888/movie/search?title=${movieTitle}`, movieTitle)
     .then(res =>
-        this.setState({ movies: [this.state.movies, res.data] }))
+        this.setState({ movies: res.data }))
   };
 
   getHeaderStyle = () => {
