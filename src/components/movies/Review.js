@@ -1,21 +1,21 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+
+class Review extends Component {
 
 
-class Movie extends Component {
-    getStyle = () => {
-        return {
-            color: 'white',
-            textDecorationLine: 2,
-            display: 'block',
-            background: "#71121f",
-            padding: '10px',
-            borderBottom: '1px #ccc dotted',
-
-        }
-    };
 
 
+    render() {
+
+        return (
+            <div>
+
+            </div>
+        );
+    }
+}
+
+/*
 
     render() {
         const {Title,Poster,imdbRating,Plot} = this.props.movie;
@@ -32,7 +32,6 @@ class Movie extends Component {
                             <p>{Title}</p>
                             <p>Rating: {imdbRating}</p>
                             <p>{Plot}</p>
-
                         </td>
                     </tr>
                     </tbody>
@@ -45,5 +44,6 @@ class Movie extends Component {
 Movie.propTypes = {
     movie: PropTypes.object.isRequired,
 };
+ */
 
-export default Movie;
+export default Review;
