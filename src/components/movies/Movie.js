@@ -18,7 +18,7 @@ class Movie extends Component {
 
 
     render() {
-        const {Title,Poster,imdbRating,Plot} = this.props.movie;
+        const {Title,Poster,imdbRating,Plot, results} = this.props.movie;
 
         return (
             <div style={this.getStyle()}>
@@ -32,7 +32,7 @@ class Movie extends Component {
                             <p>{Title}</p>
                             <p>Rating: {imdbRating}</p>
                             <p>{Plot}</p>
-
+                            <div>{results.map(result => <p> [ {result.author} ] <br /> {result.content} </p> )}</div>
                         </td>
                     </tr>
                     </tbody>
