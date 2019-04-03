@@ -32,9 +32,7 @@ class Movie extends Component {
                             <p>{Title}</p>
                             <p>Rating: {imdbRating}</p>
                             <p>{Plot}</p>
-                            <p>{results.map(result => <div> <p> {result.author} <br /> {result.content} </p> </div>)}
-                            </p>
-
+                            <div>{results.map(result => <p> [ {result.author} ] <br /> {result.content} </p> )}</div>
                         </td>
                     </tr>
                     </tbody>
