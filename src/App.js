@@ -27,14 +27,18 @@ class App extends Component {
         this.setState({ movies: [this.state.movies, res.data] }))
   };
 
-  render() {
-    const headerStyle = {
+  getHeaderStyle = () => {
+    return{
       backgroundImage: `url(${background})`,
       backgroundSize: 'cover',
       color: '',
       textAlign: 'left',
-      padding: '80px'
+      padding: '50px',
     };
+  };
+
+
+  render() {
     return (
       <Router>
         <div>
@@ -42,8 +46,8 @@ class App extends Component {
             <div>
               <StickyHeader
                 header={
-                  <div style={headerStyle} className="Header_root">
-                    <h1 className="Header_title" style={{color: 'grey'}} onClick={reaload}>Fresh Cucumbers</h1>
+                  <div style={this.getHeaderStyle()} className="Header_root">
+                    <h1 className="Header_title" style={{color: 'grey'}} onClick={reload}>Fresh Cucumbers</h1>
                     <SearchMovie  searchMovie={this.searchMovie}/>
                   </div>
                 }
@@ -77,7 +81,7 @@ class App extends Component {
       </Router>
     );
 
-    function reaload () {
+    function reload () {
       window.location.reload()
     }
   }
