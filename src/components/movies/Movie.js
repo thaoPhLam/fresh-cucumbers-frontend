@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 
 
 class Movie extends Component {
+
+    state = {
+        reviews: []
+    };
+
     getStyle = () => {
         return {
             color: 'white',
@@ -19,6 +24,8 @@ class Movie extends Component {
 
     render() {
         const {Title,Poster,imdbRating,Plot} = this.props.movie;
+        //const {Title,Poster,imdbRating,Plot, results} = Array.from(this.props.movie);
+        const reviews = this.props.movie.results.map((reviewItem) => <li>{reviewItem.author}: {reviewItem.content}</li>);
 
         return (
             <div style={this.getStyle()}>
@@ -32,8 +39,11 @@ class Movie extends Component {
                             <p>{Title}</p>
                             <p>Rating: {imdbRating}</p>
                             <p>{Plot}</p>
-
+                            <p>{reviews}</p>
                         </td>
+                    </tr>
+                    <tr>
+
                     </tr>
                     </tbody>
                 </table>
