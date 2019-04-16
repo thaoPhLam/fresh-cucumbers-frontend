@@ -76,7 +76,7 @@ class Register extends Component {
                         <label className="FormField_Label" htmlFor="email">E-Mail Address</label>
                     </div>
                     <div className="FormField">
-                        <button className="FormField_Button mr-20">Sign Up</button> <Link to="/register" className="FormField_Link">I'm already member</Link>
+                        <button className="FormField_Button mr-20">Sign Up</button> <Link to="/login" className="FormField_Link">I'm already member</Link>
                     </div>
                 </form>
             </div>
