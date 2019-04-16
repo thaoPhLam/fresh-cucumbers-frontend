@@ -7,9 +7,7 @@ class Login extends Component {
 
         this.state = {
             email: '',
-            password: '',
-            name: '',
-            hasAgreed: false
+            password: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
