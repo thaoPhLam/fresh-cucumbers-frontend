@@ -35,7 +35,7 @@ class Login extends Component {
         return (
             <div className="FormCenter">
                 <h2>Login</h2>
-                <form onSubmit={this.handleSubmit} className="FormFields" onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="FormFields">
                     <div className="FormField">
                         <input
                             type="email"
