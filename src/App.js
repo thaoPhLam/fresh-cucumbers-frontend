@@ -11,6 +11,7 @@ import axios from 'axios';
 import background from "./components/layout/popcorn.jpg";
 
 import Register from "./components/pages/Register";
+import Login from "./components/pages/Login";
 
 
 class App extends Component {
@@ -52,6 +53,8 @@ class App extends Component {
                   <div style={this.getHeaderStyle()} className="Header_root">
                     <h1 className="Header_title" style={{color: 'grey'}} onClick={reload}>Fresh Cucumbers</h1>
                     <Link to="/register">Register</Link>
+                    <br/>
+                    <Link to="/login">Login</Link>
                     <SearchMovie  searchMovie={this.searchMovie}/>
                   </div>
                 }
@@ -81,6 +84,8 @@ class App extends Component {
               </React.Fragment>
             )} />
             <Route path="/register" component={Register}>
+            </Route>
+            <Route path="/login" component={Login}>
             </Route>
           </div>
         </div>
