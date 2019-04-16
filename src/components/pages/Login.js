@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
-class Register extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
 
@@ -36,33 +36,8 @@ class Register extends Component {
     render() {
         return (
             <div className="FormCenter">
-                <h2>Registration</h2>
-                <form onSubmit={this.handleSubmit} className="FormFields">
-                    <div className="FormField">
-                        <input
-                            type="text"
-                            id="name"
-                            className="FormField_Input"
-                            placeholder="Enter your full name"
-                            name="name"
-                            value={this.state.name}
-                            onChange={this.handleChange} />
-                        <br/>
-                        <label className="FormField_Label" htmlFor="name">Full Name</label>
-
-                    </div>
-                    <div className="FormField">
-                        <input
-                            type="password"
-                            id="password"
-                            className="FormField_Input"
-                            placeholder="Enter your password"
-                            name="password"
-                            value={this.state.password}
-                            onChange={this.handleChange} />
-                        <br/>
-                        <label className="FormField_Label" htmlFor="password">Password</label>
-                    </div>
+                <h2>Login</h2>
+                <form onSubmit={this.handleSubmit} className="FormFields" onSubmit={this.handleSubmit}>
                     <div className="FormField">
                         <input
                             type="email"
@@ -75,8 +50,22 @@ class Register extends Component {
                         <br/>
                         <label className="FormField_Label" htmlFor="email">E-Mail Address</label>
                     </div>
+
                     <div className="FormField">
-                        <button className="FormField_Button mr-20">Sign Up</button> <Link to="/login" className="FormField_Link">I'm already member</Link>
+                        <input
+                            type="password"
+                            id="password"
+                            className="FormField_Input"
+                            placeholder="Enter your password"
+                            name="password"
+                            value={this.state.password}
+                            onChange={this.handleChange} />
+                        <br/>
+                        <label className="FormField_Label" htmlFor="password">Password</label>
+                    </div>
+
+                    <div className="FormField">
+                        <button className="FormField_Button mr-20">Sign In</button> <Link to="/register" className="FormField_Link">Create an account</Link>
                     </div>
                 </form>
             </div>
@@ -84,4 +73,4 @@ class Register extends Component {
     }
 }
 
-export default Register;
+export default Login;
