@@ -19,7 +19,7 @@ class Movie extends Component {
 
 
     render() {
-        const {Title,Poster,imdbRating,Plot} = this.props.movie;
+        const {Title,Poster,imdbRating,Plot,dbID} = this.props.movie;
 
         return (
             <div style={this.getStyle()}>
@@ -32,7 +32,7 @@ class Movie extends Component {
                             </Link>
                         </td>
                         <td>
-                            <Link to="/detailed-movie">{Title}</Link>
+                            <Link to="/movieDetails">{Title}</Link>
                             <p>Rating: {imdbRating}</p>
                             <p>{Plot}</p>
                         </td>

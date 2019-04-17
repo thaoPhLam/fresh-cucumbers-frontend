@@ -8,6 +8,7 @@ import SearchMovie from './components/movies/SearchMovie';
 import StickyHeader from 'react-sticky-header';
 import axios from 'axios';
 import background from "./components/layout/popcorn.jpg";
+import DetailedMoviePage from "./components/movies/DetailedMoviePage";
 
 
 class App extends Component {
@@ -76,6 +77,8 @@ class App extends Component {
                 <Movies movies={this.state.movies} />
               </React.Fragment>
             )} />
+            <Route path="/movieDetails" component={DetailedMoviePage}>
+            </Route>
           </div>
         </div>
       </Router>
