@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 
 class Movie extends Component {
@@ -18,7 +19,7 @@ class Movie extends Component {
 
 
     render() {
-        const {Title,Poster,imdbRating,Plot, results} = this.props.movie;
+        const {Title,Poster,imdbRating,Plot} = this.props.movie;
 
         return (
             <div style={this.getStyle()}>
@@ -26,13 +27,14 @@ class Movie extends Component {
                     <tbody>
                     <tr>
                         <td>
-                            <img src={Poster} alt=""/>
+                            <Link>
+                                <img src={Poster} alt=""/>
+                            </Link>
                         </td>
                         <td>
-                            <p>{Title}</p>
+                            <Link to="/detailed-movie">{Title}</Link>
                             <p>Rating: {imdbRating}</p>
                             <p>{Plot}</p>
-                            <div>{results.map(result => <p> [ {result.author} ] <br /> {result.content} </p> )}</div>
                         </td>
                     </tr>
                     </tbody>
