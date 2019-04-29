@@ -40,6 +40,8 @@ class App extends Component {
 
 
   render() {
+    let movies = <Movies movies={this.state.movies}/>;
+
     return (
       <Router>
         <div>
@@ -73,9 +75,9 @@ class App extends Component {
             </StickyHeader>
           </div>
             <Route exact path="/" render={() => (
-              <React.Fragment>
-                <Movies movies={this.state.movies} />
-              </React.Fragment>
+              <section className="Movies">
+                {movies}
+              </section>
             )} />
             <Route path="/movieDetails" component={DetailedMoviePage}>
             </Route>
