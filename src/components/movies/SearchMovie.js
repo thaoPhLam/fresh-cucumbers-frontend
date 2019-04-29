@@ -19,7 +19,6 @@ class SearchMovie extends Component {
         return (
             <form  onSubmit={this.onSubmit} style={{display: 'flex' }}>
                 <input
-                    value={this.state.data}
                     type="text"
                     name="title"
                     style={{ flex: '10', padding: '10px' }}
