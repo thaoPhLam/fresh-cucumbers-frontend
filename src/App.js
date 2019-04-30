@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import 'react-sticky-header/styles.css';
 import Movies from './components/movies/Movies';
 import SearchMovie from './components/movies/SearchMovie';
@@ -11,6 +11,7 @@ import axios from 'axios';
 import background from "./components/layout/popcorn.jpg";
 import DetailedMoviePage from "./components/movies/DetailedMoviePage";
 import Register from "./components/pages/Register";
+import Login from "./components/pages/Login";
 
 
 class App extends Component {
@@ -53,7 +54,15 @@ class App extends Component {
                 header={
                   <div style={this.getHeaderStyle()} className="Header_root">
                     <h1 className="Header_title" style={{color: 'grey'}} onClick={reload}>Fresh Cucumbers</h1>
-                    <Link to="/register">Register</Link>
+                    <NavLink style={{
+                        background:'blue',
+                        color:'white'
+                    }} to="/register">Register</NavLink>
+                    <br/>
+                    <NavLink style={{
+                        background:'blue',
+                        color:'white'
+                    }} to="/login">Login</NavLink>
                     <SearchMovie  searchMovie={this.searchMovie}/>
                   </div>
                 }
@@ -83,6 +92,8 @@ class App extends Component {
               </section>
             )} />
             <Route path="/register" component={Register}>
+            </Route>
+            <Route path="/login" component={Login}>
             </Route>
             <Route path="/movieDetails" component={DetailedMoviePage}>
             </Route>
