@@ -55,12 +55,14 @@ class App extends Component {
                   <div style={this.getHeaderStyle()} className="Header_root">
                     <h1 className="Header_title" style={{color: 'grey'}} onClick={reload}>Fresh Cucumbers</h1>
                     <NavLink style={{
+                        textDecoration:'none',
                         color:'white'
                     }} to="/register">Register</NavLink>
                     <br/>
                     <NavLink style={{
-                        color:'white'
-                    }} to="/login">Login</NavLink>
+                    textDecoration:'none',
+                    color:'white'
+                  }} to="/login">Login</NavLink>
                     <SearchMovie  searchMovie={this.searchMovie}/>
                   </div>
                 }
