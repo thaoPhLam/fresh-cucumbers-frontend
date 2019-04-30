@@ -60,9 +60,9 @@ class App extends Component {
                     }} to="/register">Register</NavLink>
                     <br/>
                     <NavLink style={{
-                    textDecoration:'none',
-                    color:'white'
-                  }} to="/login">Login</NavLink>
+                        textDecoration:'none',
+                        color:'white'
+                      }} to="/login">Login</NavLink>
                     <SearchMovie  searchMovie={this.searchMovie}/>
                   </div>
                 }
