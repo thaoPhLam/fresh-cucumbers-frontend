@@ -51,6 +51,8 @@ class App extends Component {
                 header={
                   <div style={this.getHeaderStyle()} className="Header_root">
                     <h1 className="Header_title" style={{color: 'grey'}} onClick={reload}>Fresh Cucumbers</h1>
+                    <button type="button" id="btn-login">Login</button>
+                    <button type="button" id="btn-logout">Logout</button>
                     <SearchMovie  searchMovie={this.searchMovie}/>
                   </div>
                 }
