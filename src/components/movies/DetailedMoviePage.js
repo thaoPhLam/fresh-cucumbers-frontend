@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import axios from "axios";
-import Review from "./Review";
 import Reviews from "./Reviews";
 
 class DetailedMoviePage extends Component {
@@ -44,10 +43,6 @@ class DetailedMoviePage extends Component {
                             <p>{Title}</p>
                             <p>{imdbRating}</p>
                             <p>{Plot}</p>
-
-                            {/*
-                            <div>{results.map(result => <p> [ {result.author} ] <br /> {result.content} </p> )}</div>
-                            */}
                         </td>
                     </tr>
                     </tbody>
