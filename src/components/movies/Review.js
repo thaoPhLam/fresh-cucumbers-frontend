@@ -6,10 +6,13 @@ class Review extends Component {
 
 
     render() {
+        const {author,content,dbID} = this.props.review;
 
         return (
             <div>
-
+                <p>[ {author} ]</p>
+                <p>{content}</p>
+                <p>{dbID}</p>
             </div>
         );
     }
