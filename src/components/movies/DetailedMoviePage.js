@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import axios from "axios";
-import Reviews from "./Reviews";
+import Reviews from "../reviews/Reviews";
 
 class DetailedMoviePage extends Component {
     constructor(props) {
