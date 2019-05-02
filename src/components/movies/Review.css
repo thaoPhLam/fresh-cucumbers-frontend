@@ -1,0 +1,16 @@
+.Review {
+    width: auto;
+    background-color: lightskyblue;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    margin: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.Review:hover,
+.Review:active {
+    background-color: palevioletred;
+}

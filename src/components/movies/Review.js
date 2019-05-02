@@ -1,15 +1,20 @@
 import React, {Component} from 'react';
+import './Review.css';
 
 class Review extends Component {
-
-
-
+    getStyle = () => {
+        return {
+            background: '#f4f4f4',
+            padding: '10px',
+            borderBottom: '1px #ccc dotted',
+        }
+    };
 
     render() {
         const {author,content,dbID} = this.props.review;
 
         return (
-            <div>
+            <div className="Review">
                 <p>[ {author} ]</p>
                 <p>{content}</p>
                 <p>{dbID}</p>
