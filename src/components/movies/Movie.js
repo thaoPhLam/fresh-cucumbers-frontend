@@ -18,7 +18,6 @@ class Movie extends Component {
                     <Link>
                         <img src={Poster} alt=""/>
                     </Link>
-                    <p>{dbID}</p>
                 </div>
             </article>
         );
