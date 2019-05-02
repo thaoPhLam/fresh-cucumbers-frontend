@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import axios from "axios";
-import Movie from "./Movie";
 import Review from "./Review";
+import Reviews from "./Reviews";
 
 class DetailedMoviePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            movie: {}
+            movie: {},
+            reviews: []
         };
     }
 
@@ -17,7 +18,8 @@ class DetailedMoviePage extends Component {
         console.log(dbID);
         axios.get(`http://localhost:8888/movie/movieDetails?dbID=${dbID}`, dbID)
             .then(res =>
-                this.setState({movie: res.data}));
+                this.setState({movie: res.data, reviews: res.data.results}))
+            .catch(err => console.log(err));
     };
 
 
@@ -25,8 +27,9 @@ class DetailedMoviePage extends Component {
 
     render() {
 
-        const {Title,Poster,imdbRating,Plot, results} = this.state.movie;
-        console.log(results);
+        const {Title,Poster,imdbRating,Plot} = this.state.movie;
+        //const {results} = this.state.movie.reviews;
+        //console.log(results);
         return (
             <div>
                 <table>
@@ -41,11 +44,15 @@ class DetailedMoviePage extends Component {
                             <p>{Title}</p>
                             <p>{imdbRating}</p>
                             <p>{Plot}</p>
+
+                            {/*
                             <div>{results.map(result => <p> [ {result.author} ] <br /> {result.content} </p> )}</div>
+                            */}
                         </td>
                     </tr>
                     </tbody>
                 </table>
+                <Reviews reviews={this.state.reviews} />
             </div>
         );
     }
