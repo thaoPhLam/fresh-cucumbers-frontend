@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import 'react-sticky-header/styles.css';
 import Movies from './components/movies/Movies';
 import SearchMovie from './components/movies/SearchMovie';
@@ -50,6 +50,7 @@ class App extends Component {
               <StickyHeader
                 header={
                   <div style={this.getHeaderStyle()} className="Header_root">
+                    <Link to={"/"} style={{ textDecoration: 'none'}}>HomePage</Link>
                     <h1 className="Header_title" style={{color: 'grey'}} onClick={reload}>Fresh Cucumbers</h1>
                     <SearchMovie  searchMovie={this.searchMovie}/>
                   </div>
