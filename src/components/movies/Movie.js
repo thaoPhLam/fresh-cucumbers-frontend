@@ -11,14 +11,14 @@ class Movie extends Component {
         return (
             <article className="Movie">
                 <h4>
-                    <Link to="/movieDetails">{Title}</Link>
+                    <Link to={{pathname: '/movieDetails', state:{dbID:dbID}}}>{Title}</Link>
                     <p>Rating: {imdbRating}</p>
                 </h4>
                 <div>
                     <Link>
                         <img src={Poster} alt=""/>
                     </Link>
-                    <p>{Plot}</p>
+                    <p>{dbID}</p>
                 </div>
             </article>
         );
