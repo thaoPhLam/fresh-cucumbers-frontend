@@ -34,7 +34,7 @@ class App extends Component {
       backgroundSize: 'cover',
       color: '',
       textAlign: 'left',
-      padding: '50px',
+      padding: '20px',
     };
   };
 
@@ -64,8 +64,6 @@ class App extends Component {
                     a
                   </p>
                   <p>
-                    a
-                  </p><p>
                     a
                   </p><p>
                     a
