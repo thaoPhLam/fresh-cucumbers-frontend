@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import 'react-sticky-header/styles.css';
 import Movies from './components/movies/Movies';
 import SearchMovie from './components/movies/SearchMovie';
 import StickyHeader from 'react-sticky-header';
 import axios from 'axios';
 import background from "./components/layout/popcorn.jpg";
+import DetailedMoviePage from "./components/movies/DetailedMoviePage";
 
 
 class App extends Component {
@@ -33,12 +34,14 @@ class App extends Component {
       backgroundSize: 'cover',
       color: '',
       textAlign: 'left',
-      padding: '50px',
+      padding: '20px',
     };
   };
 
 
   render() {
+    let movies = <Movies movies={this.state.movies}/>;
+
     return (
       <Router>
         <div>
@@ -47,6 +50,7 @@ class App extends Component {
               <StickyHeader
                 header={
                   <div style={this.getHeaderStyle()} className="Header_root">
+                    <Link to={"/"} style={{ textDecoration: 'none'}}>HomePage</Link>
                     <h1 className="Header_title" style={{color: 'grey'}} onClick={reload}>Fresh Cucumbers</h1>
                     <SearchMovie  searchMovie={this.searchMovie}/>
                   </div>
@@ -65,17 +69,17 @@ class App extends Component {
                     a
                   </p><p>
                     a
-                  </p><p>
-                    a
                   </p>
                 </section>
             </StickyHeader>
           </div>
             <Route exact path="/" render={() => (
-              <React.Fragment>
-                <Movies movies={this.state.movies} />
-              </React.Fragment>
+              <section className="Movies">
+                {movies}
+              </section>
             )} />
+            <Route path="/movieDetails" component={DetailedMoviePage}>
+            </Route>
           </div>
         </div>
       </Router>

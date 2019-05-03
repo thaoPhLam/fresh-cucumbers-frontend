@@ -45,3 +45,11 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.Movies {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+}
