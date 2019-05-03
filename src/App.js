@@ -3,6 +3,7 @@ import './App.css';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import 'react-sticky-header/styles.css';
+import { Button } from 'react-bootstrap';
 import Movies from './components/movies/Movies';
 import SearchMovie from './components/movies/SearchMovie';
 import StickyHeader from 'react-sticky-header';
@@ -19,7 +20,22 @@ class App extends Component {
     movies: []
   };
 
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
+
   componentDidMount() {
+
+    const { renewSession } = this.props.auth;
+
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      renewSession();
+    }
+
     axios.get('http://localhost:8888/movie/index')
         .then(res => this.setState({movies: res.data}));
 
@@ -43,6 +59,9 @@ class App extends Component {
 
 
   render() {
+
+    const { isAuthenticated } = this.props.auth;
+
     return (
       <Router>
         <div>
@@ -52,6 +71,30 @@ class App extends Component {
                 header={
 
                   <div style={this.getHeaderStyle()} className="Header_root">
+                    <div>
+                    {
+                      !isAuthenticated() && (
+                          <Button
+                              bsStyle="primary"
+                              className="btn-margin"
+                              onClick={this.login.bind(this)}
+                          >
+                            Log In
+                          </Button>
+                      )
+                    }
+                    {
+                      isAuthenticated() && (
+                          <Button
+                              bsStyle="primary"
+                              className="btn-margin"
+                              onClick={this.logout.bind(this)}
+                          >
+                            Log Out
+                          </Button>
+                      )
+                    }
+                    </div>
                     <h1 className="Header_title" style={{color: 'grey'}} onClick={reload}>Fresh Cucumbers</h1>
                     <SearchMovie  searchMovie={this.searchMovie}/>
                   </div>
