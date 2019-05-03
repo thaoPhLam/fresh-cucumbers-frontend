@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import 'react-sticky-header/styles.css';
 import { Button } from 'react-bootstrap';
 import Movies from './components/movies/Movies';
@@ -13,6 +13,9 @@ import Auth from './auth/Auth';
 
 const auth = new Auth();
 auth.login();
+
+import DetailedMoviePage from "./components/movies/DetailedMoviePage";
+
 
 
 class App extends Component {
@@ -53,14 +56,18 @@ class App extends Component {
       backgroundSize: 'cover',
       color: '',
       textAlign: 'left',
-      padding: '50px',
+      padding: '20px',
     };
   };
 
 
   render() {
 
+
     const { isAuthenticated } = this.props.auth;
+
+    let movies = <Movies movies={this.state.movies}/>;
+
 
     return (
       <Router>
@@ -71,6 +78,7 @@ class App extends Component {
                 header={
 
                   <div style={this.getHeaderStyle()} className="Header_root">
+
                     <div>
                     {
                       !isAuthenticated() && (
@@ -95,6 +103,9 @@ class App extends Component {
                       )
                     }
                     </div>
+
+                    <Link to={"/"} style={{ textDecoration: 'none'}}>HomePage</Link>
+
                     <h1 className="Header_title" style={{color: 'grey'}} onClick={reload}>Fresh Cucumbers</h1>
                     <SearchMovie  searchMovie={this.searchMovie}/>
                   </div>
@@ -113,17 +124,19 @@ class App extends Component {
                     a
                   </p><p>
                     a
-                  </p><p>
-                    a
                   </p>
                 </section>
             </StickyHeader>
           </div>
             <Route exact path="/" render={() => (
 
-                <Movies movies={this.state.movies}
-                />
+              <section className="Movies">
+                {movies}
+              </section>
+
             )} />
+            <Route path="/movieDetails" component={DetailedMoviePage}>
+            </Route>
           </div>
         </div>
       </Router>

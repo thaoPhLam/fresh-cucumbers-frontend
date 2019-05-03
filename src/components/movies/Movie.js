@@ -1,43 +1,25 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
+import './Movie.css';
 
 class Movie extends Component {
-    getStyle = () => {
-        return {
-            color: 'white',
-            textDecorationLine: 2,
-            display: 'block',
-            background: "#71121f",
-            padding: '10px',
-            borderBottom: '1px #ccc dotted',
-
-        }
-    };
-
-
 
     render() {
-        const {Title,Poster,imdbRating,Plot, results} = this.props.movie;
+        const {Title,Poster,imdbRating,Plot,dbID} = this.props.movie;
 
         return (
-            <div style={this.getStyle()}>
-                <table>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <img src={Poster} alt=""/>
-                        </td>
-                        <td>
-                            <p>{Title}</p>
-                            <p>Rating: {imdbRating}</p>
-                            <p>{Plot}</p>
-                            <div>{results.map(result => <p> [ {result.author} ] <br /> {result.content} </p> )}</div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+            <article className="Movie">
+                <h4>
+                    <Link to={{pathname: '/movieDetails', state:{dbID:dbID}}}>{Title}</Link>
+                    <p>Rating: {imdbRating}</p>
+                </h4>
+                <div>
+                    <Link>
+                        <img src={Poster} alt=""/>
+                    </Link>
+                </div>
+            </article>
         );
     }
 }
