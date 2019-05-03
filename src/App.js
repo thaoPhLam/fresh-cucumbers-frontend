@@ -8,6 +8,10 @@ import SearchMovie from './components/movies/SearchMovie';
 import StickyHeader from 'react-sticky-header';
 import axios from 'axios';
 import background from "./components/layout/popcorn.jpg";
+import Auth from './auth/Auth';
+
+const auth = new Auth();
+auth.login();
 
 
 class App extends Component {
@@ -46,6 +50,7 @@ class App extends Component {
             <div>
               <StickyHeader
                 header={
+
                   <div style={this.getHeaderStyle()} className="Header_root">
                     <h1 className="Header_title" style={{color: 'grey'}} onClick={reload}>Fresh Cucumbers</h1>
                     <SearchMovie  searchMovie={this.searchMovie}/>
@@ -72,9 +77,9 @@ class App extends Component {
             </StickyHeader>
           </div>
             <Route exact path="/" render={() => (
-              <React.Fragment>
-                <Movies movies={this.state.movies} />
-              </React.Fragment>
+
+                <Movies movies={this.state.movies}
+                />
             )} />
           </div>
         </div>
