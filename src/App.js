@@ -9,12 +9,12 @@ import SearchMovie from './components/movies/SearchMovie';
 import StickyHeader from 'react-sticky-header';
 import axios from 'axios';
 import background from "./components/layout/popcorn.jpg";
-import Auth from './auth/Auth';
-
-const auth = new Auth();
-auth.login();
-
 import DetailedMoviePage from "./components/movies/DetailedMoviePage";
+
+import Auth from './auth/Auth';
+const auth = new Auth();
+
+auth.login();
 
 
 
